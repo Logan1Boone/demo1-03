@@ -15,5 +15,23 @@ import java.util.Optional;
 @RequestMapping("/api/resources")
 public class ResourcesController {
     private static final Logger logger = LoggerFactory.getLogger(ResourcesController.class);
-    
+
+    private final ResourcesService service;
+
+    public ResourcesController(ResourcesService service) {
+        this.service = service;
+    }
+
+    @GetMapping
+    public List<ResourcesDTO> listAll(@RequestParam Optional<String> category,
+                                     @RequestParam Optional<String> q) {
+        return service.findbyFilters(category, q);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ResourcesDTO> getById(@PathVariable String id) {
+        return service.getByID(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
 }
