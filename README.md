@@ -55,6 +55,8 @@ Filter by search query (matches name or tags):
 curl "http://localhost:8080/api/resources?q=tutor"
 
 ### Project Structure
+
+```text
 src/main/java/edu/famu/cop3060/resources/
 ├── ResourcesApplication.java
 ├── controller/
@@ -64,7 +66,8 @@ src/main/java/edu/famu/cop3060/resources/
 ├── store/
 │   └── InMemoryResourceStore.java
 └── dto/
-    └── ResourceDTO.java
+    └── ResourceDTO.jav
+
 
 Notes
 
@@ -79,3 +82,4 @@ Build the Project
 To create a packaged JAR:
 
 mvn clean package
+
