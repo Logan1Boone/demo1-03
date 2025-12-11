@@ -68,7 +68,7 @@ src/main/java/edu/famu/cop3060/resources/
 └── dto/
     └── ResourceDTO.jav
 
-
+```
 Notes
 
 This project does not use a database.
@@ -82,4 +82,5 @@ Build the Project
 To create a packaged JAR:
 
 mvn clean package
+
 
